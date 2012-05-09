@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="hero-unit">
+    <h1>Snapshots!</h1>
+    <p>Generate snapshots of webpages with ease</p>
+    <p>
+    <form name="submit_form" method="POST" action="{{ url_for("submit") }}">
+        <label for="url">URL</label>
+        <input type="text" name="url" placeholder="URL" style="width: 400px" />
+        <label for="browsers">Browsers</label>
+        <a href="#" onclick="$('input[type=checkbox]').each(function(){this.checked = false;})">(uncheck all)</a>
+        <div>
+        <label>Internet Explorer</label>
+        6 <input type="checkbox" name="browsers" value="internetexplorer 6" checked="checked" />
+        7 <input type="checkbox" name="browsers" value="internetexplorer 7" checked="checked" />
+        8 <input type="checkbox" name="browsers" value="internetexplorer 8" checked="checked" />
+        9 <input type="checkbox" name="browsers" value="internetexplorer 9" checked="checked" />
+        <label>Firefox</label>
+        3.0 <input type="checkbox" name="browsers" value="firefox 3.0" checked="checked" />
+        3.5 <input type="checkbox" name="browsers" value="firefox 3.5" checked="checked" />
+        3.6 <input type="checkbox" name="browsers" value="firefox 3.6" checked="checked" />
+        4 <input type="checkbox" name="browsers" value="firefox 4" checked="checked" />
+        5 <input type="checkbox" name="browsers" value="firefox 5" checked="checked" />
+        6 <input type="checkbox" name="browsers" value="firefox 6" checked="checked" />
+        7 <input type="checkbox" name="browsers" value="firefox 7" checked="checked" />
+        8 <input type="checkbox" name="browsers" value="firefox 8" checked="checked" />
+        9 <input type="checkbox" name="browsers" value="firefox 9" checked="checked" />
+        10 <input type="checkbox" name="browsers" value="firefox 10" checked="checked" />
+        11 <input type="checkbox" name="browsers" value="firefox 11" checked="checked" />
+        <label>Chrome</label>
+        <input type="checkbox" name="browsers" value="chrome" checked="checked" />
+        <label>Opera 11</label>
+        <input type="checkbox" name="browsers" value="opera" checked="checked" />
+        </div>
+        <p><input type="submit" class="btn btn-primary btn-large" /></p>
+    </form>
+    </p>
+  </div>
+{% endblock %}

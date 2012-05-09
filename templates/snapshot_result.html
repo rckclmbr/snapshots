@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="hero-unit">
+    <h1>Snapshot</h1>
+    {% for browser in snapshot.browser_snapshots %}
+        <h3>{{ browser.browser }}</h3>
+        {% if browser.is_displayable() %}
+            <p>
+                <a href="{{ browser.image_url() }}">
+                    <img src="{{ browser.thumbnail_url() }}">
+                </a>
+            </p>
+        {% else %}
+            <p>Status: {{ browser.status_human() }}</p>
+            {% if browser.status == "ERROR" %}
+            <p>Error Message: {{ browser.message }}</p>
+            {% endif %}
+            <p><a class="btn btn-primary btn-large">More &raquo;</a></p>
+        {% endif %}
+    {% endfor %}
+    Test
+  </div>
+{% endblock %}
